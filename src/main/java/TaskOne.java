@@ -1,31 +1,40 @@
-import java.util.Scanner;
+import Utils.InputReader;
+
+import java.util.ArrayList;
 
 public class TaskOne {
 
     public static void main(String[] args) {
-        System.out.println("Enter two numbers and you will get all even numbers between them");
-        findEvenNumbers();
+        System.out.println("Enter two whole numbers and you will get all even numbers between them.");
+
+        int[] inputNumbers = getInputNumbers();
+        ArrayList<Integer> evenNumbers = findEvenNumbers(inputNumbers);
+        printResultNumbers(evenNumbers);
     }
 
-    public static void findEvenNumbers() {
-        int[] values = inputNumbers();
+    public static ArrayList<Integer> findEvenNumbers(int[] values) {
+        ArrayList<Integer> numbers = new ArrayList<>();
 
         for (int i = values[0]; i <= values[1]; i++) {
             if (i % 2 == 0) {
-                System.out.println(i);
+                numbers.add(i);
             }
         }
-    }
-
-    public static int[] inputNumbers() {
-        int[] numbers = new int[2];
-
-        Scanner firstInput = new Scanner(System.in);
-        numbers[0] = firstInput.nextInt();
-
-        Scanner secondInput = new Scanner(System.in);
-        numbers[1] = secondInput.nextInt();
 
         return numbers;
+    }
+
+    public static int[] getInputNumbers() {
+        int[] numbers = new int[2];
+        numbers[0] = InputReader.readInt();
+        numbers[1] = InputReader.readInt();
+
+        return numbers;
+    }
+
+    public static void printResultNumbers(ArrayList numbers) {
+        for (int i = 0; i < numbers.size(); i++) {
+            System.out.println(numbers.get(i));
+        }
     }
 }
