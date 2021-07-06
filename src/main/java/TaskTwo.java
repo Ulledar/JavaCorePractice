@@ -4,9 +4,31 @@ public class TaskTwo {
 
     public static void main(String[] args) {
         String str = inputString();
+
         String[] splittedString = splitString(str);
         String unfoldedString = getUnfoldString(splittedString);
         System.out.println(unfoldedString);
+
+        char[] chars = toCharArray(str);
+        char[] unfoldedChars = unfoldedChars(chars);
+        String unfoldStr = new String(unfoldedChars);
+//        String unfoldStr = String.valueOf(unfoldedChars);
+        System.out.println(unfoldStr);
+    }
+
+    public static char[] toCharArray(String inputString) {
+        return inputString.toCharArray();
+    }
+
+    public static char[] unfoldedChars(char[] chars) {
+        char[] unfoldedCharsArray = new char[chars.length];
+        int a = chars.length-1;
+
+        for (char aChar : chars) {
+            unfoldedCharsArray[a] = aChar;
+            a--;
+        }
+        return unfoldedCharsArray;
     }
 
     public static String getUnfoldString(String[] array) {
