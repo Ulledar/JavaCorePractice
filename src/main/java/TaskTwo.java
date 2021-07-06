@@ -1,5 +1,5 @@
 import Utils.InputReader;
-import Utils.UnfoldStrings;
+import Utils.StringUtils;
 
 public class TaskTwo {
 
@@ -10,10 +10,8 @@ public class TaskTwo {
         String unfoldedString = getUnfoldString(splittedString);
         System.out.println(unfoldedString);
 
-        char[] chars = UnfoldStrings.toCharArray(str);
-        char[] unfoldedChars = UnfoldStrings.unfoldedChars(chars);
-        String unfoldStr = UnfoldStrings.charToString(unfoldedChars);
-        System.out.println(unfoldStr);
+        String reverseString = StringUtils.reverseString(str);
+        System.out.println(reverseString);
     }
 
     public static String getUnfoldString(String[] array) {

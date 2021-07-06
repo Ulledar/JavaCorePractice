@@ -1,23 +1,22 @@
 import Utils.InputReader;
-import Utils.UnfoldStrings;
+import Utils.StringUtils;
 
 public class TaskThree {
 
     public static void main(String[] args) {
+        System.out.println("Write a word and I will check is it palindrome or not");
         String input = InputReader.readString();
-        char[] chars = UnfoldStrings.toCharArray(input);
-        char[] unfoldedChars = UnfoldStrings.unfoldedChars(chars);
-        String unfoldInput = UnfoldStrings.charToString(unfoldedChars);
 
-        if (checkPolindrome(input, unfoldInput)) {
-            System.out.println(input + " - полиндром!!!");
+        if (isPalindrome(input)) {
+            System.out.println(input + " - palindrome!!!");
         } else {
-            System.out.println(input + " - не полиндром =(");
+            System.out.println(input + " - not a palindrome =(");
         }
     }
 
-    public static boolean checkPolindrome(String baseString, String unfoldString) {
-        return baseString.equals(unfoldString);
+    public static boolean isPalindrome(String baseString) {
+        String reversed = StringUtils.reverseString(baseString);
+        return baseString.equals(reversed);
     }
 
 }
