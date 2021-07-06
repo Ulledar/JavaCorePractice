@@ -1,4 +1,5 @@
 import Utils.InputReader;
+import Utils.UnfoldStrings;
 
 public class TaskTwo {
 
@@ -9,25 +10,10 @@ public class TaskTwo {
         String unfoldedString = getUnfoldString(splittedString);
         System.out.println(unfoldedString);
 
-        char[] chars = toCharArray(str);
-        char[] unfoldedChars = unfoldedChars(chars);
-        String unfoldStr = new String(unfoldedChars);
+        char[] chars = UnfoldStrings.toCharArray(str);
+        char[] unfoldedChars = UnfoldStrings.unfoldedChars(chars);
+        String unfoldStr = UnfoldStrings.charToString(unfoldedChars);
         System.out.println(unfoldStr);
-    }
-
-    public static char[] toCharArray(String getUserInput) {
-        return getUserInput.toCharArray();
-    }
-
-    public static char[] unfoldedChars(char[] chars) {
-        char[] unfoldedCharsArray = new char[chars.length];
-        int tempValue = chars.length-1;
-
-        for (char aChar : chars) {
-            unfoldedCharsArray[tempValue] = aChar;
-            tempValue--;
-        }
-        return unfoldedCharsArray;
     }
 
     public static String getUnfoldString(String[] array) {
