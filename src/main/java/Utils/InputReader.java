@@ -8,6 +8,10 @@ public class InputReader {
         return new Scanner(System.in).nextInt();
     }
 
+    public static double readDouble() {
+        return  new Scanner(System.in).nextDouble();
+    }
+
     public static String readString() {
         return new Scanner(System.in).nextLine();
     }
