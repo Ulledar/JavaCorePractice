@@ -18,5 +18,4 @@ public class TaskThree {
         String reversed = StringUtils.reverseString(baseString);
         return baseString.equals(reversed);
     }
-
 }
