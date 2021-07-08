@@ -12,7 +12,7 @@ public class Circle {
         return Math.PI * Math.pow(radius, 2);
     }
 
-    public static double getPerimetr() {
+    public static double getPerimeter() {
         return 2 * Math.PI * radius;
     }
 }
