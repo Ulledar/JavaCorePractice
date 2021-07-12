@@ -2,17 +2,17 @@ package OOP;
 
 public class Circle {
 
-    private static double radius;
+    private double radius;
 
-    public static void setRadius(double radius) {
-        Circle.radius = radius;
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
-    public static double getSquare() {
+    public double getSquare() {
         return Math.PI * Math.pow(radius, 2);
     }
 
-    public static double getPerimeter() {
+    public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
 }
