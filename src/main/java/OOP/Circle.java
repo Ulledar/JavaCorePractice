@@ -1,6 +1,6 @@
 package OOP;
 
-public class Circle {
+public class Circle implements Squarable{
 
     private double radius;
 
